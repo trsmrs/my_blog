@@ -1,20 +1,22 @@
+import clsx from 'clsx';
+import classNames from 'clsx';
+
 
 type SpinLoaderProps = {
     containerClasses?: string;
 }
 
 export default function SpinLoader({ containerClasses = "" }: SpinLoaderProps) {
+    const classes = clsx(
+        'flex',
+        'items-center',
+        'justify-center',
+        containerClasses,
+    )
 
     return (
-        <div className={`flex items-center justify-center ${containerClasses}`}>
-            <div className="
-         w-10 h-10
-         border-5
-         border-t-transparent 
-         bg-white
-         rounded-full
-         animate-spin
-         ">
+        <div className={classes}>
+            <div className={classNames('w-10 h-10 border-5 border-t-transparent border-amber-500 rounded-full animate-spin')}>
             </div>
         </div>
     )
