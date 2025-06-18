@@ -6,7 +6,6 @@ type ContentPostHeadingProps = {
     dateTime?: string;
     excerpt?: string;
     postLink: string;
-    
 }
 
 export function ContentPostHeading({ title, dateTime, excerpt, postLink }: ContentPostHeadingProps) {
@@ -18,7 +17,7 @@ export function ContentPostHeading({ title, dateTime, excerpt, postLink }: Conte
                 {dateTime}
                 
             </time>
-            <PostHeading as="h2" children={title} url={postLink} toolTip={title}/>
+            <PostHeading as="h2" children={title} url={postLink}/>
             <p>
                 {excerpt}
             </p>

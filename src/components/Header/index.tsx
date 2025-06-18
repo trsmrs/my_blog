@@ -12,7 +12,7 @@ export function Header() {
                 'sm: text-5xl/normal sm:py-10',
                 'md: text-6xl/normal md:py-12'
             )}>
-                <a href='#'>The Blog</a>
+                <a href='#'>The Code Talker Blog</a>
             </h1>
         </header>
     )
