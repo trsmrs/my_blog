@@ -25,7 +25,7 @@ export function PostFeatured() {
                 title={"Título teste - [Passar para useContext]"}
                 dateTime={"16/08/2025 - [Passar para useContext]"}
                 excerpt={"Em vez de configurar tudo manualmente, basta criar um arquivo com o nome certo e o Next.js entende que aquilo representa uma página.- [Passar para useContext]"}
-                postLink={"/post"}
+                postLink={postLink}
             />
         </section>
     )
