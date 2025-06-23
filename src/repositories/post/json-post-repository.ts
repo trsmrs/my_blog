@@ -14,7 +14,7 @@ const SIMULATE_WAIT_IN_MS = 0;
 
 export class JsonRepository implements PostRepository {
 
-    private async simulateWait(){
+    private async simulateWait() {
         if (SIMULATE_WAIT_IN_MS <= 0) return;
 
         await new Promise(resolve => setTimeout(resolve, SIMULATE_WAIT_IN_MS));
@@ -29,15 +29,22 @@ export class JsonRepository implements PostRepository {
     }
 
     async findAllPublic(): Promise<PostModel[]> {
-       await this.simulateWait();
+        await this.simulateWait();
 
         const posts = await this.readFromDisk()
         return posts.filter(post => post.published);
 
     }
+    async findAll(): Promise<PostModel[]> {
+        await this.simulateWait();
+
+        const posts = await this.readFromDisk()
+        return posts
+
+    }
 
     async findById(id: string): Promise<PostModel> {
-        
+
         const posts = await this.findAllPublic()
         const post = posts.find(post => post.id === id);
 
@@ -46,7 +53,7 @@ export class JsonRepository implements PostRepository {
     }
 
     async findBySlug(slug: string): Promise<PostModel> {
-        
+
         const posts = await this.findAllPublic()
         const post = posts.find(post => post.slug === slug);
 
