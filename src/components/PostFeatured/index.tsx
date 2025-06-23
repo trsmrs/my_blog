@@ -1,11 +1,13 @@
 import { ContentPostHeading } from "../ContentPostHeading";
 import { PostCoverImage } from "../PostCoverImage";
-import { formatDateTime, formatRelativeDate } from "@/utils/format-dateTime";
+import { formatDateTime } from "@/utils/format-dateTime";
 import { findAllPublicPostsCached } from "@/lib/post/queries";
 
 export async function PostFeatured() {
     const posts = await findAllPublicPostsCached();
-    const post = posts[0]
+    let rnd = Math.floor(Math.random() * posts.length)
+    const post = posts[rnd]
+    
 
     const postLink = `/post/${post.slug}`
 

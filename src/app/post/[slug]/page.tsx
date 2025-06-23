@@ -26,7 +26,7 @@ export default async function PostSlugPage({ params }: PostSlugPageProps) {
 
     return (
         <Suspense fallback={<SpinLoader containerClasses="min-h-20 mb-16" />}>
-            <SinglePost slug={slug}/>
+            <SinglePost slug={post.slug} />
         </Suspense>
     )
 }

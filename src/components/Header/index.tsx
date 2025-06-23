@@ -1,5 +1,5 @@
-'use client'
 import clsx from 'clsx';
+import Link from 'next/link';
 
 
 
@@ -12,7 +12,7 @@ export function Header() {
                 'sm: text-5xl/normal sm:py-10',
                 'md: text-6xl/normal md:py-12'
             )}>
-                <a href='#'>The Code Talker Blog</a>
+                <Link href='/'>The Code Talker Blog</Link>
             </h1>
         </header>
     )

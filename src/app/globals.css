@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 :root {
     --my-color: oklch(76.9% 0.188 70.08);
